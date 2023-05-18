@@ -1238,3 +1238,504 @@ document.getElementById("result").innerHTML = "You have clicked the button "+
 sessionStorage.clickcount + " time(s) in this session.";
 ```
 
+## Module 5 - Flexbox intro and Module 5 - Flexbox intro and media query media query
+
+### <ins>Flexbox</ins>
+
+- Proporciona una forma eficiente de disponer, alinear y distribuir el espacio entre los elementos de un contenedor.  
+- La idea principal: dar al contenedor la posibilidad de modificar la anchura/altura (y el orden) de sus elementos para aprovechar al máximo el espacio disponible.
+
+**Flex box container properties**
+
+- `display: flex`
+    - define un contenedor flex
+
+- `flex-direction: row | row-reverse | column | column-reverse;`
+    - establece el eje principal
+    - define la dirección de colocación de los niños
+
+- `flex-wrap: nowrap | wrap | wrap-reverse;`
+    - permita que los artículos se envuelvan o se desenvuelvan según sea necesario
+
+- `justify-content`
+    - define la alineación a lo largo del eje principal
+    - eje X para la fila, eje Y para la columna
+
+- `align-items`
+    - define la alineación a lo largo del eje transversal
+    - eje Y para fila, eje X para columna - opuesto a `justify-content`.
+
+- children properties
+
+
+**Flex box item properties**
+
+- `order: <integer>; /* default is 0 */`
+    - orden de aparición de los elementos flex en el contenedor flex
+
+- `flex-grow: <number>; /* default 0 */`
+    - define la capacidad de un elemento flexible para crecer si es necesario
+    - acepta un valor sin unidades que sirve de proporción
+
+- `flex-shrink: <number>; /* default 1 */`
+    - define la capacidad de un elemento flexible para encogerse si es necesario
+
+- `flex-basis: <length> | auto; /* default auto */`
+    - define el tamaño por defecto de un elemento antes de que se distribuya el espacio restante 
+    - puede ser una longitud (por ejemplo, 20%, 5rem, etc.) o una palabra clave  
+    - la palabra clave `auto` significa "mira mi propiedad de anchura o altura"
+
+- `flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]`
+    - abreviatura de flex-grow, flex-shrink y flex-basis combinados  
+    - por defecto 0 1 auto  
+    - se recomienda utilizar esta propiedad abreviada en lugar de establecer las propiedades individuales la propiedad abreviada establece los demás valores de forma inteligente
+
+- `align-self`
+    - permite modificar la alineación por defecto de cada elemento.  
+    - anula la propiedad `align-items` del contenedor
+
+**Flexbox Examples**
+
+- Este es el código que utilizaremos para demostrar cómo funciona flex box
+
+```html
+<div class="flex-container">
+  <div class="flex-item">1</div>
+  <div class="flex-item">2</div>
+  <div class="flex-item">3</div>
+  <div class="flex-item">4</div>
+  <div class="flex-item">5</div>
+  <div class="flex-item">6</div>
+
+</div>
+```
+
+```css
+.flex-container {
+  display: flex;
+  padding: 20px;
+  margin: 0;
+  list-style: none;
+  background: orange;
+}
+
+.flex-item {
+  background: tomato;
+  padding: 5px;
+  width: 200px;
+  height: 150px;
+  margin-top: 10px;
+  line-height: 150px;
+  color: white;
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center;
+}
+```
+
+- Este es el resultado del código anterior
+![](src/1stOutput.png)    
+  
+    
+```css
+.flex-container {
+  display: flex;
+  flex-direction: column;
+}
+```
+![](src/2ndOutput.png)
+
+```css
+.flex-container {
+  display: flex;
+  flex-direction: column-reverse;
+}
+```
+![](src/3rdOutput.png)
+
+```css
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+```
+
+![](src/4thOutput.png)
+
+```css
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+```
+
+![](src/5thOutput.png)
+
+```html
+<div class="flex-container">
+  <div class="flex-item second">1</div>
+  <div class="flex-item first">2</div>
+  <div class="flex-item third">3</div>
+</div>
+```
+```css
+.first {
+  order: 1;
+
+}
+
+.second {
+  order: 2;
+
+}
+
+.third {
+  order: 3;
+
+}
+```
+![](src/6thOutput.png)  
+  
+```html
+<div class="flex-container">
+  <div class="flex-item second">1</div>
+  <div class="flex-item first">2</div>
+  <div class="flex-item third">3</div>
+</div>
+``` 
+```css
+.first {
+  flex-grow: 1;
+
+}
+
+.second {
+  flex-grow: 2;
+
+}
+
+.third {
+  flex-grow: 3;
+
+}
+```
+
+![](src/7thOutput.png)
+
+```html
+<div class="flex-container">
+  <div class="flex-item second">1</div>
+  <div class="flex-item first">2</div>
+  <div class="flex-item third">3</div>
+</div>
+```
+
+```css
+.first {
+  flex-basis: 500px;
+}
+```
+
+![](src/8thOutput.png)
+
+
+### <ins>Media queries</ins>
+
+- Se introdujo en `CSS3`.  
+- Utiliza la regla `@media` para incluir CSS sólo si se cumple una determinada condición.
+
+![](src/mediaQueries.png)  
+
+- Las consultas de medios le permiten apuntar a cualquier plataforma que desee y escribir estilos específicos para esa plataforma.  
+- Así es como se escriben los estilos responsive
+    - Diferentes estilos para ordenadores de sobremesa, tabletas y móviles   
+- Ejemplo sencillo
+
+```css
+// If the browser window is smaller than 500px, the background color will
+change to lightblue:
+
+@media only screen and (max-width: 500px) {
+    body {
+
+        background-color: lightblue;
+    }
+}
+```
+
+- A continuación se indican los puntos de ruptura para los dispositivos de su interés
+
+```css
+/* Extra small phones */
+@media only screen and (max-width: 600px) {
+}
+
+/* Portrait tablets and large phones */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Landscape tablets */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Laptops/desktops */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Large laptops and desktops */
+@media only screen and (min-width: 1200px) {
+
+}
+```
+
+**Always Design for Mobile First**
+
+- Esto significa que el estilo para móviles primero  
+- A continuación, incluir estilos de escritorio en las consultas de los medios de comunicación
+
+```css
+/* Default styles for mobile phones */
+.mobile-styles {
+    width: 100%;
+}
+
+/* Styles for desktop in media queries */
+@media only screen and (min-width: 768px) {
+    /* Style For desktop: */
+    .desktop-styles {
+        width: 100%;
+    }
+}
+```
+
+**Orientation: Portrait / Landscape**
+
+- Se trata de consultas que se aplican en función de la orientación del navegador/dispositivo
+
+```css
+@media only screen and (orientation: landscape) {
+    body {
+        background-color: lightblue;
+    }
+}
+```
+
+### <ins>Let's talk about the sizes - `px` vs `em` vs `rem`</ins>
+
+- Los `pixels` son ignorantes, evítalos
+- Si estás configurando todos tus tamaños de fuente, tamaños de elementos y espaciado en píxeles, no estás tratando al usuario final con respeto.
+    - Los usuarios tendrán que hacer zoom con ctrl más +/- dependiendo del dispositivo en el que se encuentren 
+- Los `REMs` son una forma de establecer el tamaño de la fuente basándose en el tamaño de la fuente del elemento HTML raíz.  
+- Permite escalar rápidamente todo un proyecto cambiando el tamaño de la fuente raíz.  
+- `em` es relativo al tamaño de fuente de su padre directo o más cercano.
+    - Cuando se tienen estilos anidados se hace difícil rastrear los ems.   
+    - Esto es lo que solucionan los REM: el tamaño siempre se refiere a la raíz.
+- Tanto `pixels` como `REMs` para media queries fallan en varios navegadores cuando se usa el zoom del navegador, y `EMs` es la mejor opción que tenemos.
+    
+
+
+**How to calculate PX from REM**    
+
+EJEMPLO: El tamaño de la fuente HTML es de 10px, el tamaño de la fuente del párrafo es de 1,6rem.    
+
+Entonces el tamaño en píxeles es `1.6rem * 10px = 16px`.
+
+### <ins>More on `rem` vs `em`</ins>
+- Tanto `rem` como `em` son unidades relativas  
+- `rem` sólo es relativo al tamaño de fuente HTML (raíz).  
+- `rem` se utiliza habitualmente para los márgenes, los rellenos y, a veces, también para el tamaño de la fuente.
+- `em` es relativo al tamaño de fuente de su padre directo o más cercano.   
+- se recomienda el uso de `em` para consultas de medios
+
+### <ins>CSS Grids</ins>
+
+**Flexbox**
+
+- Flexbox es de 1 dimensión  
+- Son columnas O filas  
+- No son posibles diseños bidimensionales completos
+
+**Grids**
+
+- Es un sistema de maquetación basado en cuadrículas  
+- Las rejillas CSS son bidimensionales  
+- Se pueden modificar columnas y filas simultáneamente
+
+> SUGERENCIA: Puede utilizar Grid y Flexbox juntos.
+
+**Example**
+
+- Veamos el siguiente ejemplo   
+- Crea un `wrapper` DIV 
+    - `display: grid;` denota el DIV como Grid   
+- Luego creamos 2 filas
+- Cada una tiene 2 columnas  
+    - Primera columna -> 70% del espacio
+    - Segunda columna -> 30% del espacio  
+    - `grid-template-columns: 70% 30%;` define estas dos columnas
+
+```html
+<div class="wrapper">
+    // first row
+  <div>70%</div>
+  <div>30%</div>
+
+  // second row... you don't have to specify rows like bootstrap
+  <div>70%</div>
+  <div>30%</div>
+</div>
+```
+
+```css
+.wrapper {
+    display: grid;
+
+  // this will split children into 2 rows of 70% and 30%
+    grid-template-columns: 70% 30%;
+}
+```
+**Example #2 - Gaps**
+
+- Aquí creamos 3 columnas  
+    - 40% 30% 30% respectivamente  
+- `grid-column-gap` - se utiliza para dar margen entre columnas  
+- `grid-row-gap` - se utiliza para dar margen entre filas  
+- `grid-gap` - se usa para dar margen entre filas y columnas usando un solo comando
+
+```css
+.wrapper {
+    display: grid;
+    grid-template-columns: 40% 30% 30%; // 3 columns in 1 row
+    grid-column-gap: 1em; // margin between columns
+    grid-row-gap: 1em; // margin between row
+    grid-gap; 1em; // row and column both!!!
+}
+```
+**Example #3 - Fractions**
+
+- No tiene que perder tiempo calculando porcentajes   
+- Puedes usar simplemente "fracciones"  
+- 3 DIVS con el mismo ancho
+```css
+grid-template-columns: 1fr 1fr 1fr;
+```  
+
+- 3 DIVS
+- El espacio total se dividirá por 4
+    - ej: 80 / 4 = 20px  
+    - 1er y 3er DIV ocuparán un espacio de 20px  
+    - El 2º DIV ocupará 40px
+
+```css
+grid-template-columns: 1fr 2fr 1fr;
+```
+
+**Example #4 - Fractions Contd.**
+
+- Puede utilizar la función repeat() en lugar de repetir manualmente los tamaños de las columnas   
+- La siguiente propiedad creará 4 columnas  
+- El ancho de cada columna es 1fr
+```css
+grid-template-columns: repeat(4, 1fr);
+```
+> SUGERENCIA: se recomiendan las fracciones antes que los píxeles o los %.
+
+- Ejemplo ampliado
+```css
+.wrapper {
+  display: grid;
+
+  // 3 columns in 1 row
+  // divide into fractions...
+  grid-template-columns: 1fr 2fr 1fr;
+
+  // it will repeat fractions 4 times
+  grid-template-columns: repeat(4, 1fr 2fr);
+
+  grid-auto-row: 100px; // row height will be 100px
+
+  grid-auto-row: minmax(100px, auto); // min height = 100px max height =
+auto based on content
+}
+```
+**Nested grids**
+
+- También puede definir rejillas anidadas
+
+```html
+<div class="wrapper">
+  <div class="nested">
+
+    <div></div>
+    <div></div>
+    <div></div>
+
+  </div>
+</div>
+```
+
+```css
+// now the nested div is also a grid container
+.nested {
+
+    display: grid;
+  grid-template-columns: repeat(3, 1fr); // 3 columns of 1 fr
+  grid-auto-rows: 100px;
+
+}
+
+Start-End points of Grid
+
+}
+```
+
+- También podemos especificar los puntos inicial y final de las columnas y filas de la cuadrícula 
+- Si utiliza esta opción, es posible que no desee especificar los tamaños  
+- Echa un vistazo a las descripciones en línea
+```html
+// wrapper is grid container... of 4 columns in this example!!!
+<div class="wrapper">
+
+  <div class="box1"></div>
+  <div class="box2"></div>
+  <div class="box3"></div>
+  <div class="box4"></div>
+
+</div>
+```
+
+```css
+.box1 {
+    grid-column: 1/3; // box1 spans from 1 to 3 columns on browser window
+
+  grid-row: 1/3; // box1 spans from 1 to 3 rows on browser window
+}
+
+.box2 {
+    grid-column: 3; // box2 spans takes spaces 3 and 4
+
+  grid-row: 1/3; // same as box1
+}
+
+.box3 {
+    grid-column: 2/4; // box3 will take space 2 to 4
+
+  grid-row: 3; // it will take row space 3
+}
+
+// NOTE: in grids... we can overlaps things.. like below
+// overlaps 1 and 3
+// Sooo... you don't need negative margins and that crap CSS!!!
+.box4 {
+
+    grid-column: 1;
+  grid-row: 2/4;
+
+}
+```
+
