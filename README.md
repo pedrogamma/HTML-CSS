@@ -1763,7 +1763,7 @@ Start-End points of Grid
 ```html
  <html>
     <head>
-        <!— Other stuff like title and meta tags go here -->
+         <!-- Other stuff like title and meta tags go here  -->
         <style type="text/css">
             .hidden {display:none;}
         </style>
@@ -1778,7 +1778,7 @@ $('html').removeClass('hidden');
         </script>
     </head>
     <body>
-        <!— Body Content -->
+         <!-- Body Content  -->
     </body>
 </html>
 ```
@@ -1888,7 +1888,7 @@ $('html').removeClass('hidden');
 - Grab sample CSS reset [here](https://meyerweb.com/eric/tools/css/reset/)
 - The problem with CSS Resets is that they are ugly and hard to debug
 - Solution - use Normalize CSS with little bit of CSS Reset
-- Unlike an ordinary CSS reset, target speci c HTML tags’ styles rather than making a big list of tags.
+- Unlike an ordinary CSS reset, target specific HTML tags’ styles rather than making a big list of tags.
     - Make it less aggressive and a lot more readable  
 
 ### <ins>Validate your CSS</ins>
@@ -1916,10 +1916,10 @@ $('html').removeClass('hidden');
 
  ```html 
 <link type="text/css" href="style.css" />
-<!—[If IE]>
+<!-- [If IE] -->
   <link type="text/css" href="IEHacks.css" />
-<![endif]-->
-<!—[if !IE]>
+<!-- [endif] -->
+<!-- [if !IE] -->
   <link type="text/css" href="NonIEHacks.css" />
-<![endif]-->
+<!-- [endif] -->
 ```
