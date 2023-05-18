@@ -1128,3 +1128,113 @@ parent
   - usado para el problema 2
 
 
+## Module 4 - Semantic HTML5 Module 4 - Semantic HTML5
+
+### <ins>Semantic HTML?</ins>
+
+- Es un estilo de codificación  
+- Elementos semánticos == elementos con significado Bueno para SEO  
+- Bueno para la accesibilidad  
+        - Especialmente para personas con discapacidad visual  
+        - Que dependen de la voz del navegador, lectores de pantalla para interpretar el contenido de la página con claridad 
+        ![semanticHtml](src/semanticHtml.png)
+- Mira la imagen de arriba  
+- Cada elemento semántico describe claramente su significado tanto al navegador como al desarrollador Evita el uso de simples etiquetas div en todas partes. No expresan claramente la intención.  
+- Utilice elementos como encabezado, nav, sección, artículo, aparte, pie de página  
+- Todos estos elementos están construidos con un propósito específico - también son buenos para SEO.
+
+
+**More about Semantic HTML**
+
+- `<b> </b>` para negrita, y `<i> </i>` para cursiva no debe utilizarse  
+        - Son sólo formato  
+        - No indican el significado ni la estructura  
+- Utilice `<strong> </strong>` y `<em> </em>`  
+        - Aportar significado ---> énfasis por ejemplo  
+- Elementos no semánticos: `<div>` and `<span>` - No dice nada sobre su contenido   
+- Elementos semánticos: `<form>`, `<table>`, and `<article>` - Define claramente su contenido
+
+### <ins>Diference between HTML and HTML5?</ins>
+
+**HTML**
+
+- Lenguaje sencillo para maquetar texto e imágenes en una página web
+
+**HTML 5**
+
+- Más como una plataforma de desarrollo de aplicaciones  
+- Un nuevo estándar para HTML  
+- Mejor soporte para audio, vídeo y gráficos interactivos  
+- Admite el almacenamiento de datos en línea  
+- Protocolos de intercambio más robustos  
+- Ya no se necesitan tecnologías de plug-in propietarias como Adobe Flash o Microsoft Silverlight.  
+        - Porque los navegadores pueden procesar estos elementos sin ningún soporte externo
+
+**Below are new semantic elements**
+```html
+- <article>, <aside>, <command>, <details>, <figure>, <figcaption>, <summary>
+- <header>, <footer>, <hgroup>, <nav>, <progress>, <section>, <time>
+- <audio> y <video>
+- <canvas>
+```
+
+**What elements have disappeared in the latest HTML?**
+```html
+- <frame> and <frameset>
+- <noframe>, <applet>, <bigcenter> and <basefront>
+```
+
+### <ins>Diference between `<div>` and `<frame>`?</ins>
+
+- `div` es un contenedor genérico para agrupar y estilizar   
+- `frame` en realidad divide la página  
+- `frame` ya no es popular  
+- en su lugar se utiliza `iframes`  
+        - exible  
+        - incrusta elementos de terceros, como vídeos de YouTube
+
+### <ins>What is HTML5 Web Storage?</ins>
+
+- Con HTML5, los navegadores pueden almacenar datos localmente  
+- Es más seguro y rápido que las cookies  
+- Puede almacenar gran cantidad de información -> más que las cookies  
+- Son pares `name/value`  
+- 2 objetos  
+        - `window.localStorage` - almacena datos sin fecha de caducidad  
+        - `window.sessionStorage` - almacena datos para una sesión (los datos se pierden cuando se cierra la pestaña)
+
+**localStorage:**
+
+- Almacena los datos sin fecha de caducidad   
+- Los datos NO se borran al cerrar el navegador   
+- Disponibles al día, semana o año siguiente
+    - No es posible especificar la caducidad  
+    - Puedes gestionar su caducidad en tu app
+
+```js
+// Store
+localStorage.setItem("lastname", "Smith");
+
+// Retrieve
+document.getElementById("result").innerHTML =
+localStorage.getItem("lastname");
+```
+
+**sessionStorage:**
+
+- Almacena los datos para una sola sesión   
+- Los datos se borran al cerrar el navegador
+
+```js
+if (sessionStorage.clickcount) {
+    sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
+
+} else {
+    sessionStorage.clickcount = 1;
+
+}
+
+document.getElementById("result").innerHTML = "You have clicked the button "+  
+sessionStorage.clickcount + " time(s) in this session.";
+```
+
