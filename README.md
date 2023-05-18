@@ -1,12 +1,37 @@
-## Module 1 - Getting Started  
+## Contenido
+- [Module 1 - Getting Started](#module-1---getting-started)  
+- [Module 2 - Styling your WebPage](#module-2---styling-your-webpage)  
+- [Module 3 - Display and position your elements](#module-3---display-and-position-your-elements)  
+- [Module 4 - Semantic HTML5](#module-4---semantic-html5)  
+- [Module 5 - Flexbox intro and media query media query](#module-5---flexbox-intro-and-media-query-media-query)  
+- [Module 6 - Quirks, tips, and tricks](#module-6---quirks-tips-and-tricks)    
+  
+## Module 1 - Getting Started    
+- [Create Your First HTML Page](#crea-tu-primera-página-html)  
+  - [Write the following boilerplate code in `index.html` file](#escriba-el-siguiente-código-boilerplate-en-el-archivo-indexhtml)   
+  - [Run Your First HTML File](#ejecute-su-primer-archivo-html)
+  - [Run the application on the Internet for FREE](#ejecutar-la-aplicación-en-internet-gratis)
+    - [If I do not put `<! DOCTYPE html>` will HTML5 work?](#¡si-no-escribo--doctype-html-¿funcionará-html5)
+    - [DOM](#dom)
+  - [When should you use section, div or article?](#when-should-you-use-section-div-or-article)
+    - [section](#section)
+    - [article](#article)
+    - [div](#div)
+    - [Headings](#headings)
+    - [Paragraph](#paragraph)
+    - [Links / Anchor elements](#links--anchor-elements) 
+      - [Images](#images)
+      - [Image Sizes](#image-sizes)
+      - [Image as links](#image-as-links)
 
-### <ins>Crea tu primera página HTML</ins>
+
+### Crea tu primera página HTML
 
 - Crea una carpeta `app` en tu ordenador  
 - Crea una página llamada `index.html` dentro de la carpeta `app` en tu ordenador Abre esa página en tu editor de texto favorito
 	- Yo personalmente uso VSCode
 
-### <ins>Escriba el siguiente código `boilerplate` en el archivo `index.html`</ins>
+### Escriba el siguiente código `boilerplate` en el archivo `index.html`
 
 - Este es su código HTML boilerplate  
 - Le está diciendo al navegador que index.html es un archivo HTML y que lo renderice como un sitio web HTML. 
@@ -33,13 +58,13 @@
 ```
 
 
-### <ins>Ejecute su primer archivo HTML</ins>
+### Ejecute su primer archivo HTML
 
 - Para ejecutar su aplicación localmente   
     - Guarde los cambios en la página `index.html`.  
     - A continuación, abra implícitamente su archivo `index.html` en el navegador
 
-### <ins>Ejecutar la aplicación en Internet GRATIS</ins>
+### Ejecutar la aplicación en Internet GRATIS
 
 - Si quieres ejecutar tu aplicación en Internet y compartir la URL con tu socio sigue estos pasos  
 - Ve a [Netlify Drop](https://app.netlify.com/drop)
@@ -48,12 +73,12 @@
 
 > Puedes ver el ejemplo [aquí](https://happy-ramanujan-9ca090.netlify.app)
 
-**¡Si no escribo `<! DOCTYPE html>` ¿funcionará HTML5?**
+#### **¡Si no escribo `<! DOCTYPE html>` ¿funcionará HTML5?**
 
 - No, el navegador no podrá identificar que se trata de un documento HTML y las etiquetas HTML 5 no funcionarán correctamente.  
 - Los navegadores modernos son lo suficientemente inteligentes como para renderizar el contenido HTML, pero puede que no esté optimizado correctamente.
 
-**DOM**
+#### **DOM**
 ![dom](src/dom.png)
 - El documento HTML se representa como un árbol 
 - Cada nodo del árbol es un objeto  
@@ -68,9 +93,9 @@
 
 > NOTA: Los navegadores modernos son inteligentes. Si el navegador encuentra HTML malformado, lo corrige automáticamente al hacer el DOM. Por ejemplo: el navegador insertará automáticamente la etiqueta `<html>` en la parte superior si no se proporciona.
 
-### <ins>When should you use section, div or article?</ins>
+### When should you use section, div or article?
 
-**section**
+#### **section**
 + Agrupar contenidos con un único tema relacionado 
 + Como una subsección de un artículo largo 
 + Normalmente tiene encabezamiento y pie de página
@@ -80,7 +105,7 @@
 	<p>My long paragraph</p>
 </section>
 ```
-**article**
+#### **article**
 - Representa el contenido completo y autónomo de una página. 
 - Puede ser una entrada de foro, un artículo de periódico, una entrada de blog 
 - Su contenido independiente  
@@ -92,7 +117,7 @@
 </article>
 ```
 
-**div**
+#### **div**
 - No transmite ningún significado  
 - Suele denominarse elemento de último recurso 
 - Se utiliza cuando ningún otro elemento es adecuado
@@ -102,7 +127,7 @@
   <p>My long paragraph</p>
 </div>
 ```
-**Headings**
+#### **Headings**
 - Las etiquetas Heading forman parte del HTML semántico  
 - Se utilizan para dene encabezados  
 - Van de `h1` a `h6`  
@@ -125,7 +150,7 @@
 <h1 style="font-size:72px;">My Heading</h1>
 ```
 
-**Paragraph**
+#### **Paragraph**
 - El elemento `p` se utiliza para escribir un párrafo de texto en HTML.  
 - Puede incluir p dentro de otros elementos como div, section, article
 
@@ -137,7 +162,7 @@
 </div>
 ```
 
-**Links / Anchor elements**
+#### **Links / Anchor elements**
 - Los enlaces permiten a los usuarios navegar  
     - De una página a otra 
     - O incluso de una sección de la página a otra sección de la misma página 
@@ -149,7 +174,7 @@
 <a href="https://www.google.com">Google</a>
 ```
 
-**Images**
+#### **Images**
 - HTML le permite añadir imágenes en su sitio web  
 - El atributo `src` es donde se especifica la ubicación de la imagen. 
     - Puede ser una imagen de Internet  
@@ -163,7 +188,7 @@
 - Los atributos `alt` permiten mostrar un texto alternativo en caso de que la imagen no esté disponible para su visualización.  
     - Por ejemplo, si no hay conexión a Internet o el usuario utiliza un lector de pantalla.
 
-**Image Sizes**
+#### **Image Sizes**
 - Puedes ajustar el tamaño de tu imagen utilizando las propiedades `width` y `height` o la propiedad style
 
 ```html 
@@ -173,7 +198,7 @@ height="150">
 style="width:150px; height:150px;">
 ```
 
-**Image as Links**
+#### **Image as Links**
 - Puede hacer que las imágenes sean clicables utilizando etiquetas `anchor` a su alrededor.  
 - Esto se puede utilizar para navegar a otro lugar haciendo clic en la imagen
 
@@ -182,15 +207,16 @@ style="width:150px; height:150px;">
 	<img src="https://via.placeholder.com/150" alt="placeholder" width="150" height="150">
 </a>
 ```
+[⬆](#module-1---getting-started)  **[↩️](#contenido)**
 
-## Module 2 - Styling your Module 2 - Styling your
+## Module 2 - Styling your WebPage
 
-### <ins>Crear un archivo CSS</ins>
+### Crear un archivo CSS</ins>
 
 - Cree un archivo `style.css` dentro de la carpeta `app` que creó anteriormente al crear su primera página HTML.  
 - Sus estilos irán en este archivo `style.css`.
 
-### <ins>A continuación, añada su estilo en el archivo `index.html`.</ins>
+### A continuación, añada su estilo en el archivo `index.html`.</ins>
 
 - Debe utilizar la etiqueta de enlace para incluir su archivo de estilo dentro de su archivo HTML
 
@@ -203,7 +229,7 @@ style="width:150px; height:150px;">
 </head>
 ```
 
-### <ins>Ahora vamos a crear el cuerpo de tu tarjeta de San Valentín</ins>
+### Ahora vamos a crear el cuerpo de tu tarjeta de San Valentín</ins>
 - Reemplace la etiqueta `body` en su `index.html` le para que coincida con el siguiente código  
 - Usted está agregando `card` DIV que será el contenedor de su tarjeta de felicitación. Añadiremos los estilos más tarde.  
 - Dentro del DIV `card` añade dos etiquetas H1
@@ -225,7 +251,7 @@ style="width:150px; height:150px;">
 </body>
 ```
 
-### <ins>Ahora vamos a añadir tu primer estilo</ins>
+### Ahora vamos a añadir tu primer estilo</ins>
 - Vamos a añadir estilos para su tarjeta de San Valentín  
 - Estamos utilizando .card - class selector para agarrar la tarjeta DIV y darle estilo  
 - Aquí sólo estamos estableciendo un bonito rojo `border: 10px sólido #E53038;`   
@@ -356,7 +382,7 @@ p.myClass {
 }
 ```
 
-### <ins>Advanced Selectors</ins>
+### Advanced Selectors</ins>
 
 **adjacent selector**
 - Selecciona sólo el elemento precedido por el elemento anterior. 
@@ -477,7 +503,7 @@ NOT selected
 <img src="dog.gif" title="dog" width="200" height="358"> // NOT selected
 ```
 
-### <ins>Backgrounds</ins>
+### Backgrounds</ins>
 - Puedes establecer diferentes fondos para tus elementos  
 - El fondo de un elemento es el tamaño total del elemento, incluyendo el relleno y el borde (pero no el margen).  
 - A continuación se muestra la lista de todas las propiedades de fondo
@@ -505,7 +531,7 @@ body {
 }
 ```
 
-### <ins>Colors</ins>
+### Colors</ins>
 - La propiedad color especifica el color del texto  
 - Puede especificar la propiedad color en diferentes elementos utilizando diferentes tipos de selectores 
 - Puede especificar colores por su nombre, su valor hexadecimal o su valor RGB
@@ -526,7 +552,7 @@ h1#myId {
 }
 ```
 
-### <ins>Borders</ins>
+### Borders</ins>
 - Puedes añadir bordes a tus elementos HTML 
 - A continuación se muestra la lista de todas las propiedades de borde
 ```css
@@ -546,7 +572,7 @@ h1 {
 }
 ```
 
-### <ins>Fun with Border Radius</ins>
+### Fun with Border Radius</ins>
 
 **Shapes**
 - Los bordes también tienen otra propiedad llamada `border-radius` con la que puedes dar diferentes formas a tus elementos
@@ -637,10 +663,11 @@ h1 {
     border-radius: 5px 20px 5px;
 }
 ```
-  
-## Module 3 - Display and Module 3 - Display and position your elements
+[⬆](#module-2---styling-your-webpage)  **[↩️](#contenido)**
 
-### <ins>Box model</ins>
+## Module 3 - Display and position your elements
+
+### Box model</ins>
 ![boxModel](src/boxModel.png)
 - Imagina una caja que envuelve cada elemento HTML  
     - Esto se refiere al modelo de caja  
@@ -678,7 +705,7 @@ Total element height = height + top padding + bottom padding + top border
 + bottom border + top margin + bottom margin
 ```
 
-### <ins>Margins</ins>
+### Margins</ins>
 - Los márgenes se utilizan para crear espacio alrededor de los elementos, fuera de su borde.
 
 ```html
@@ -743,7 +770,7 @@ div {
 }
 ```
 
-### <ins>Paddings</ins>
+### Paddings</ins>
 - Los márgenes se utilizan para generar espacio alrededor del contenido del elemento en cuestión, dentro de su borde.
 
 ```html
@@ -797,7 +824,7 @@ div {
 }
 ```
 
-### <ins>Display</ins>
+### Display</ins>
 
 **Block**
 - Esta propiedad estira el elemento de izquierda a derecha todo lo que puede  
@@ -847,7 +874,7 @@ div {
 - Rellena el espacio disponible  
     - O se encoge para evitar el exceso
 
-### <ins>Positions</ins>
+### Positions</ins>
 **Static**
 - Es el valor por defecto para cada elemento 
 - Honestamente, no significa mucho.  
@@ -918,7 +945,7 @@ div {
 }
 ```
 
-### <ins>Centering:</ins>
+### Centering:</ins>
 - Centrar la línea de texto utilizando la propiedad `text-align`.
 ```html
 <div class="card">
@@ -1006,7 +1033,7 @@ div.container p {
   - `50%` en `translate(0, -50%)` se refiere a la altura del propio elemento
 
 
-### <ins>CSS Float</ins>
+### CSS Float</ins>
 - El elemento puede desplazarse hacia la izquierda o la derecha  
 - Otros elementos pueden envolverlo  
 - Se utiliza para posicionar y dar formato al contenido 
@@ -1127,10 +1154,11 @@ parent
   - prop fijado al padre  
   - usado para el problema 2
 
+[⬆](#module-3---display-and-position-your-elements)  **[↩️](#contenido)**  
 
-## Module 4 - Semantic HTML5 Module 4 - Semantic HTML5
+## Module 4 - Semantic HTML5
 
-### <ins>Semantic HTML?</ins>
+### Semantic HTML?</ins>
 
 - Es un estilo de codificación  
 - Elementos semánticos == elementos con significado Bueno para SEO  
@@ -1154,7 +1182,7 @@ parent
 - Elementos no semánticos: `<div>` and `<span>` - No dice nada sobre su contenido   
 - Elementos semánticos: `<form>`, `<table>`, and `<article>` - Define claramente su contenido
 
-### <ins>Diference between HTML and HTML5?</ins>
+### Diference between HTML and HTML5?</ins>
 
 **HTML**
 
@@ -1184,7 +1212,7 @@ parent
 - <noframe>, <applet>, <bigcenter> and <basefront>
 ```
 
-### <ins>Diference between `<div>` and `<frame>`?</ins>
+### Diference between `<div>` and `<frame>`?</ins>
 
 - `div` es un contenedor genérico para agrupar y estilizar   
 - `frame` en realidad divide la página  
@@ -1193,7 +1221,7 @@ parent
         - exible  
         - incrusta elementos de terceros, como vídeos de YouTube
 
-### <ins>What is HTML5 Web Storage?</ins>
+### What is HTML5 Web Storage?</ins>
 
 - Con HTML5, los navegadores pueden almacenar datos localmente  
 - Es más seguro y rápido que las cookies  
@@ -1237,10 +1265,11 @@ if (sessionStorage.clickcount) {
 document.getElementById("result").innerHTML = "You have clicked the button "+  
 sessionStorage.clickcount + " time(s) in this session.";
 ```
+[⬆](#module-4---semantic-html5)  **[↩️](#contenido)**  
 
-## Module 5 - Flexbox intro and Module 5 - Flexbox intro and media query media query
+## Module 5 - Flexbox intro and media query media query
 
-### <ins>Flexbox</ins>
+### Flexbox</ins>
 
 - Proporciona una forma eficiente de disponer, alinear y distribuir el espacio entre los elementos de un contenedor.  
 - La idea principal: dar al contenedor la posibilidad de modificar la anchura/altura (y el orden) de sus elementos para aprovechar al máximo el espacio disponible.
@@ -1441,7 +1470,7 @@ sessionStorage.clickcount + " time(s) in this session.";
 ![](src/8thOutput.png)
 
 
-### <ins>Media queries</ins>
+### Media queries</ins>
 
 - Se introdujo en `CSS3`.  
 - Utiliza la regla `@media` para incluir CSS sólo si se cumple una determinada condición.
@@ -1525,7 +1554,7 @@ change to lightblue:
 }
 ```
 
-### <ins>Let's talk about the sizes - `px` vs `em` vs `rem`</ins>
+### Let's talk about the sizes - `px` vs `em` vs `rem`</ins>
 
 - Los `pixels` son ignorantes, evítalos
 - Si estás configurando todos tus tamaños de fuente, tamaños de elementos y espaciado en píxeles, no estás tratando al usuario final con respeto.
@@ -1545,14 +1574,14 @@ EJEMPLO: El tamaño de la fuente HTML es de 10px, el tamaño de la fuente del p�
 
 Entonces el tamaño en píxeles es `1.6rem * 10px = 16px`.
 
-### <ins>More on `rem` vs `em`</ins>
+### More on `rem` vs `em`</ins>
 - Tanto `rem` como `em` son unidades relativas  
 - `rem` sólo es relativo al tamaño de fuente HTML (raíz).  
 - `rem` se utiliza habitualmente para los márgenes, los rellenos y, a veces, también para el tamaño de la fuente.
 - `em` es relativo al tamaño de fuente de su padre directo o más cercano.   
 - se recomienda el uso de `em` para consultas de medios
 
-### <ins>CSS Grids</ins>
+### CSS Grids</ins>
 
 **Flexbox**
 
@@ -1738,10 +1767,11 @@ Start-End points of Grid
 
 }
 ```
+[⬆](#module-5---flexbox-intro-and-media-query-media-query)  **[↩️](#contenido)**  
 
-## Module 6 - Quirks, tips, and Module
+## Module 6 - Quirks, tips, and tricks
 
-### <ins>FOUC</ins>  
+### FOUC</ins>  
 - Flash de contenido sin estilo
 - Ocurre cuando durante un breve momento -> el contenido se muestra con los estilos por defecto del navegador   
 - Ocurre cuando no se carga el CSS pero sí el contenido  
@@ -1782,7 +1812,7 @@ $('html').removeClass('hidden');
     </body>
 </html>
 ```
-### <ins>BEM naming convention</ins>  
+### BEM naming convention</ins>  
 ![bemNaming](src/bemNaming.png)  
 
 - Blocks, Elements, Modifiers -> BEM
@@ -1816,7 +1846,7 @@ $('html').removeClass('hidden');
   <li class="nav__item nav__item—-active">About</li> // active modifier applied
 </ul>
 ```
-### <ins>OOCSS - Object Oriented CSS</ins>  
+### OOCSS - Object Oriented CSS</ins>  
 
 - Estándar para estructurar su CSS de forma modular   
 - Puede reutilizar CSS sin problemas
@@ -1861,7 +1891,7 @@ $('html').removeClass('hidden');
 </footer>
 ```
 
-### <ins>CSS User Agent Styles</ins>
+### CSS User Agent Styles</ins>
 
 - Estos son los estilos del navegador
 - Cuando el navegador renderiza una página aplica estilos básicos antes de que hayas escrito un solo estilo   
@@ -1872,7 +1902,7 @@ $('html').removeClass('hidden');
     - Normalizar CSS como solución suave
     - Restablecer CSS como solución más agresiva
 
-### <ins>Normalizing CSS</ins>  
+### Normalizing CSS</ins>  
 
 - Small CSS file that provides cross-browser consistency
 - Provides default styles for HTML elements
@@ -1880,7 +1910,7 @@ $('html').removeClass('hidden');
 - In some cases this approach applies IE or EDGE styles to the rest of the browsers  
 
 
-### <ins>Reset CSS</ins>  
+### Reset CSS</ins>  
 
 - This approach says that we don’t need the browsers’ default styles at all   
 - We’ll define in the project according to our needs
@@ -1891,7 +1921,7 @@ $('html').removeClass('hidden');
 - Unlike an ordinary CSS reset, target specific HTML tags’ styles rather than making a big list of tags.
     - Make it less aggressive and a lot more readable  
 
-### <ins>Validate your CSS</ins>
+### Validate your CSS</ins>
 
 - Use online tools to validate your CSS
 - Validation Service can be used to check the correctness (validity)
@@ -1901,7 +1931,7 @@ $('html').removeClass('hidden');
     - It merely ensures that your code is without HTML or CSS errors. 
 - Tool - The Validation Service
 
-### <ins>Testing Strategies</ins>
+### Testing Strategies</ins>
 
 - Do cross-browser testing
 - Manually test Chrome, Firefox
@@ -1910,7 +1940,7 @@ $('html').removeClass('hidden');
      - browsershots.org
      - IEtest  
 
-### <ins>Conditional CSS</ins>  
+### Conditional CSS</ins>  
 
 - Use below conditional CSS for IE hacks
 
@@ -1923,3 +1953,4 @@ $('html').removeClass('hidden');
   <link type="text/css" href="NonIEHacks.css" />
 <!-- [endif] -->
 ```
+[⬆](#module-6---quirks-tips-and-tricks)  **[↩️](#contenido)**
