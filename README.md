@@ -211,12 +211,37 @@ style="width:150px; height:150px;">
 
 ## Module 2 - Styling your WebPage
 
-### Crear un archivo CSS</ins>
+- [Create a CSS File](#crear-un-archivo-css)
+- [Then add your style in your `index.html` file](#a-continuación-añada-su-estilo-en-el-archivo-indexhtml)
+- [Now let's create the body of your Valentine's Day card](#ahora-vamos-a-crear-el-cuerpo-de-tu-tarjeta-de-san-valentín)   
+- [Now let's add your first style](#ahora-vamos-a-añadir-tu-primer-estilo)
+- [Selectors](#selectors)
+  - [.class](#class)
+  - [child .class](#child-class) 
+  - [#id](#id)
+  - [element tag](#element-tag) 
+  - [Mix n match](#mix-n-match)
+  - [Id and Class](#id-and-class)
+  - [Element and Class](#element-and-class)
+- [Advanced Selectors](#advanced-selectors)  
+  - [adjacent selector](#adjacent-selector)
+  - [attributes selector](#attributes-selector) 
+- [Backgrounds](#backgrounds)
+- [Colors](#colors)
+- [Borders](#borders)
+- [Fun with Border Radius](#fun-with-border-radius)
+  - [Shapes](#shapes) 
+  - [Shorthand](#shorthand) 
+  - [Circle and leaf](#circle-and-leaf) 
+  - [Circle](#circle)
+  - [Leaf](#leaf)
+
+### Crear un archivo CSS
 
 - Cree un archivo `style.css` dentro de la carpeta `app` que creó anteriormente al crear su primera página HTML.  
 - Sus estilos irán en este archivo `style.css`.
 
-### A continuación, añada su estilo en el archivo `index.html`.</ins>
+### A continuación, añada su estilo en el archivo `index.html`.
 
 - Debe utilizar la etiqueta de enlace para incluir su archivo de estilo dentro de su archivo HTML
 
@@ -229,7 +254,7 @@ style="width:150px; height:150px;">
 </head>
 ```
 
-### Ahora vamos a crear el cuerpo de tu tarjeta de San Valentín</ins>
+### Ahora vamos a crear el cuerpo de tu tarjeta de San Valentín
 - Reemplace la etiqueta `body` en su `index.html` le para que coincida con el siguiente código  
 - Usted está agregando `card` DIV que será el contenedor de su tarjeta de felicitación. Añadiremos los estilos más tarde.  
 - Dentro del DIV `card` añade dos etiquetas H1
@@ -251,7 +276,7 @@ style="width:150px; height:150px;">
 </body>
 ```
 
-### Ahora vamos a añadir tu primer estilo</ins>
+### Ahora vamos a añadir tu primer estilo
 - Vamos a añadir estilos para su tarjeta de San Valentín  
 - Estamos utilizando .card - class selector para agarrar la tarjeta DIV y darle estilo  
 - Aquí sólo estamos estableciendo un bonito rojo `border: 10px sólido #E53038;`   
@@ -273,7 +298,7 @@ style="width:150px; height:150px;">
 }
 ```
 
-**Selectors**
+#### **Selectors**
 - En términos simples, los selectores se utilizan para tomar un elemento del DOM y aplicarle estilos. 
 - Hay diferentes tipos de selectores que aprenderás a continuación
 - Las imágenes muestran el selector de etiquetas  
@@ -282,7 +307,7 @@ style="width:150px; height:150px;">
 - `margin` es la propiedad. `3px` es el valor de la propiedad  
 - Hay muchos otros valores que puede utilizar para aplicar estilos correctos a su página web.
 
-**.class**
+#### **.class**
 - Selecciona todos los elementos con el nombre de clase dado  
 - Seleccionará todos los p con class="myClass"  
 - Escribe un punto (.) seguido del nombre de la clase
@@ -297,7 +322,7 @@ style="width:150px; height:150px;">
 ```
 
 
-**child .class**
+#### **child .class**
 - Puede apuntar a un elemento hijo utilizando una jerarquía de clases
 ```css
 // syntax
@@ -323,7 +348,7 @@ style="width:150px; height:150px;">
 ```
 
 
-**#id**
+#### **#id**
 - Estilizar el elemento con el atributo `id` dado  
 - En el siguiente ejemplo `myParagraph` es el id del párrafo  
 - Seleccionamos los elementos añadiendo `#` seguido del atributo `id` del elemento
@@ -338,7 +363,7 @@ style="width:150px; height:150px;">
 }
 ```
 
-**element tag**
+#### **element tag**
 - Puedes seleccionar directamente un elemento por su nombre de etiqueta y aplicar los estilos  
 - En este caso no tienes que mencionar el `id` o la `class` - simplemente escribe el nombre del elemento en tus estilos y añádele propiedades.  
 - El siguiente ejemplo tomará todos los elementos `p` y les aplicará el estilo
@@ -352,11 +377,11 @@ background-color: yellow;
 }
 ```
 
-**Mix n match**
+#### **Mix n match**
 - Los selectores mencionados son las formas básicas y más comunes de seleccionar elementos y aplicarles estilos.  
 - También puede combinar cualquiera de los selectores anteriores para aplicar los estilos  
 
-**Id and Class**
+#### **Id and Class**
 - `id="miParrafo"` forma el selector Id 
 - `class="miClase"` forma el selector de clase
 ```html
@@ -369,7 +394,7 @@ background-color: yellow;
 }
 ```
 
-**Element and Class**
+#### **Element and Class**
 - `p` se utiliza como selector de elemento 
 - `class="myClass"` forma el selector de clase
 ```html
@@ -382,9 +407,9 @@ p.myClass {
 }
 ```
 
-### Advanced Selectors</ins>
+### Advanced Selectors
 
-**adjacent selector**
+#### **adjacent selector**
 - Selecciona sólo el elemento precedido por el elemento anterior. 
 - En este caso, sólo el primer párrafo después de cada ul tendrá texto rojo.
 
@@ -399,7 +424,7 @@ ul + p {
 }
 ```
 
-**attributes selector**
+#### **attributes selector**
 - Sólo seleccionará las etiquetas de anclaje que tengan un atributo title
 ```css
 a[title] {
@@ -503,7 +528,7 @@ NOT selected
 <img src="dog.gif" title="dog" width="200" height="358"> // NOT selected
 ```
 
-### Backgrounds</ins>
+### Backgrounds
 - Puedes establecer diferentes fondos para tus elementos  
 - El fondo de un elemento es el tamaño total del elemento, incluyendo el relleno y el borde (pero no el margen).  
 - A continuación se muestra la lista de todas las propiedades de fondo
@@ -531,7 +556,7 @@ body {
 }
 ```
 
-### Colors</ins>
+### Colors
 - La propiedad color especifica el color del texto  
 - Puede especificar la propiedad color en diferentes elementos utilizando diferentes tipos de selectores 
 - Puede especificar colores por su nombre, su valor hexadecimal o su valor RGB
@@ -552,7 +577,7 @@ h1#myId {
 }
 ```
 
-### Borders</ins>
+### Borders
 - Puedes añadir bordes a tus elementos HTML 
 - A continuación se muestra la lista de todas las propiedades de borde
 ```css
@@ -572,9 +597,9 @@ h1 {
 }
 ```
 
-### Fun with Border Radius</ins>
+### Fun with Border Radius
 
-**Shapes**
+#### **Shapes**
 - Los bordes también tienen otra propiedad llamada `border-radius` con la que puedes dar diferentes formas a tus elementos
 - Si el radio del borde es del 50%, el cuadrado se convertirá en un círculo.
 ```css
@@ -589,7 +614,7 @@ h1 {
 }
 ```
 
-**Shorthand**
+#### **Shorthand**
 - Si se establece un valor, este radio se aplica a las 4 esquinas.  
 - Si se establecen dos valores, el primero se aplica a las esquinas superior izquierda e inferior derecha, el segundo a las esquinas superior derecha e inferior izquierda.  
 - Si se establecen tres valores, el segundo se aplica a las esquinas superior derecha e inferior izquierda.  
@@ -648,16 +673,16 @@ h1 {
 }
 ```
 
-**Circle and leaf**
+### **Circle and leaf**
 
-**Circle**
+#### **Circle**
 ```css
 .circle {
     border-radius: 50%;
 }
 ```
 
-**Leaf**
+#### **Leaf**
 ```css
 .leaf {
     border-radius: 5px 20px 5px;
@@ -666,8 +691,35 @@ h1 {
 [⬆](#module-2---styling-your-webpage)  **[↩️](#contenido)**
 
 ## Module 3 - Display and position your elements
+- [Box model](#box-model)
+  - [Total width of an element should be calculated like this:](#la-anchura-total-de-un-elemento-debe-calcularse-así)
+  - [Total height of an element should be calculated like this:](#la-altura-total-de-un-elemento-debe-calcularse-así)  
+- [Margins](#margins)
+  - [Margin On Individual Sides](#margin-on-individual-sides)
+  - [Margin Shorthands](#margin-shorthands)
+  - [Auto Margin](#auto-margin)
+- [Paddings](#paddings)
+  - [Padding On Individual Sides](#padding-on-individual-sides) 
+  - [Padding Shorthands](#padding-shorthands)
+- [Display](#display) 
+  - [Block](#block)
+  - [Inline](#inline) 
+  - [Inline-block](#inline-block)
+  - [None](#none)
+  - [Visibility Hidden](#visibility-hidden)
+  - [Flex](#flex)
+- [Positions](#positions) 
+  - [Static](#static)
+  - [Relative](#relative) 
+  - [Absolute](#absolute) 
+  - [Fixed](#fixed)
+- [Centering:](#centering)
+  - [Centering Vertically](#centering-vertically)
+- [CSS Float](#css-float)
+  - [Clearing Floats](#clearing-floats)
+  - [Methods to clear float:](#methods-to-clear-float)  
 
-### Box model</ins>
+### Box model
 ![boxModel](src/boxModel.png)
 - Imagina una caja que envuelve cada elemento HTML  
     - Esto se refiere al modelo de caja  
@@ -692,20 +744,20 @@ div {
 = 350px
 ```
 
-**La anchura total de un elemento debe calcularse así:**
+#### **La anchura total de un elemento debe calcularse así:**
 
 ```
 Total element width = width + left padding + right padding + left border +
 right border + left margin + right margin
 ```
 
-**La altura total de un elemento debe calcularse así:**
+#### **La altura total de un elemento debe calcularse así:**
 ```
 Total element height = height + top padding + bottom padding + top border
 + bottom border + top margin + bottom margin
 ```
 
-### Margins</ins>
+### Margins
 - Los márgenes se utilizan para crear espacio alrededor de los elementos, fuera de su borde.
 
 ```html
@@ -723,7 +775,7 @@ Total element height = height + top padding + bottom padding + top border
 
 - `margin: 20px;` gives the `p` element margin of `20px` around it from all the sides
 
-**Margin On Individual Sides**
+#### **Margin On Individual Sides**
 - También puede dar margen a los elementos de cualquier lado si lo desea.
 ```css
 margin-top
@@ -732,7 +784,7 @@ margin-bottom
 margin-left
 ```
 
-**Margin Shorthands**
+#### **Margin Shorthands**
 - Este atajo se puede utilizar para dar margen en todos los lados
 
 ```css
@@ -760,7 +812,7 @@ margin: 20px 40px 50px;
 }
 ```
 
-**Auto Margin**
+#### **Auto Margin**
 - El valor `auto` de margin establece el elemento horizontalmente centrado dentro de su contenedor  
 - Abajo `div` ocupará 200px de ancho y el espacio restante se dividirá equitativamente entre el margen izquierdo y derecho
 ```css
@@ -770,7 +822,7 @@ div {
 }
 ```
 
-### Paddings</ins>
+### Paddings
 - Los márgenes se utilizan para generar espacio alrededor del contenido del elemento en cuestión, dentro de su borde.
 
 ```html
@@ -789,7 +841,7 @@ div {
 - `padding: 20px;` da al elemento `div` un relleno de `20px`.  
 - Así que, básicamente, habrá un espacio de `20px` entre `p` y `div` en todos los lados.
 
-**Padding On Individual Sides**
+#### **Padding On Individual Sides**
 - También puede dar relleno a los elementos en cualquier lado en particular si lo desea
 ```css
 padding-top
@@ -798,7 +850,7 @@ padding-bottom
 padding-left
 ```
 
-**Padding Shorthands**
+#### **Padding Shorthands**
 - Para acolchar todos los lados
 ```css
 div {
@@ -824,16 +876,16 @@ div {
 }
 ```
 
-### Display</ins>
+### Display
 
-**Block**
+#### **Block**
 - Esta propiedad estira el elemento de izquierda a derecha todo lo que puede  
 - Por defecto es block para `div`, `p`, `form`, `header`, `footer`, `section` (y algunos más) 
 - Estos elementos no pueden colocarse en la misma línea horizontal con ningún otro modo de visualización.  
     - Excepto cuando están floated  
 - Como se muestra en la ilustración -> cada elemento se estira y ocupa toda la fila
 
-**Inline**
+#### **Inline**
 - El elemento Inline se sitúa en línea  
 		- Sin interrumpir el flujo de otros elementos
 - Como se muestra en la ilustración -> cada elemento ocupa sólo el espacio que necesita  
@@ -847,18 +899,18 @@ div {
 - Se respetan el margen horizontal y el relleno 
 - Ignoran el margen vertical y el relleno vertical
 
-**Inline-block**
+#### **Inline-block**
 - Es igual que los elementos inline  
 - PERO respetan la anchura y la altura  
 - Básicamente, combinan las propiedades de los elementos de bloque y de los elementos en línea.  
 - El elemento puede aparecer en la misma línea horizontal que otros elementos.  
 - Así que, como muestra la ilustración, si ajustas la anchura puedes poner todos los elementos juntos en una sola fila.
 
-**None**
+#### **None**
 - Estos elementos no aparecerán en la página en absoluto Pero todavía se puede interactuar con ella a través de DOM  
 - NO hay espacio asignado en la página
 
-**Visibility Hidden**
+#### **Visibility Hidden**
 - Se le asigna espacio en la página 
 - La etiqueta se muestra en el DOM  
 - El elemento no es visible
@@ -868,14 +920,14 @@ div {
 }
 ```
 
-**Flex**
+#### **Flex**
 - La propiedad Flex permite modificar la anchura y la altura de los elementos para adaptarlos al espacio disponible.
 - Se utiliza para adaptarse a todo tipo de dispositivos de visualización y tamaños de pantalla.  
 - Rellena el espacio disponible  
     - O se encoge para evitar el exceso
 
-### Positions</ins>
-**Static**
+### Positions
+#### **Static**
 - Es el valor por defecto para cada elemento 
 - Honestamente, no significa mucho.  
     - Sólo significa que se insertará en la página como lo haría normalmente.
@@ -883,7 +935,7 @@ div {
 - Úsalo cuando quieras quitar la posición aplicada forzosamente al elemento 
 - NOTA: `z-index` no funciona con ellos
 
-**Relative**
+#### **Relative**
 - El elemento es relativo a sí mismo 
 - Echa un vistazo al siguiente ejemplo
 ```html
@@ -902,7 +954,7 @@ div {
     - Consulte la ilustración anterior
 - Sin esa propiedad "top" - sólo habría seguido `position: static`.
 
-**Absolute**
+#### **Absolute**
 - Esta propiedad es muy potente  
 - Le permite colocar el elemento exactamente donde desee 
 - Usando top, left, bottom. y right para establecer la ubicación 
@@ -931,7 +983,7 @@ div {
 - El `div` de arriba se deslizará hacia abajo y a la izquierda en `10px` desde su padre    
   - Asumiendo que el padre tiene una posición absoluta o relativa
 
-**Fixed**
+#### **Fixed**
 - Posición relativa a la ventana gráfica  
 - Útil en encabezados o pies de página xed  
 - Por favor, consulte la ilustración de arriba para una mejor visualización
@@ -945,7 +997,7 @@ div {
 }
 ```
 
-### Centering:</ins>
+### Centering:
 - Centrar la línea de texto utilizando la propiedad `text-align`.
 ```html
 <div class="card">
@@ -993,7 +1045,7 @@ IMG {
 ```
 
 
-**Centering Vertically**
+#### **Centering Vertically**
 - Podemos usar la propiedad `transform` junto con `top` del elemento para centrarlo verticalmente dentro de su padre.  
 - Por favor, no el contenedor padre tiene que ser posicionado `relative` o `absolute` para centrar el hijo
 ```html
@@ -1033,7 +1085,7 @@ div.container p {
   - `50%` en `translate(0, -50%)` se refiere a la altura del propio elemento
 
 
-### CSS Float</ins>
+### CSS Float
 - El elemento puede desplazarse hacia la izquierda o la derecha  
 - Otros elementos pueden envolverlo  
 - Se utiliza para posicionar y dar formato al contenido 
@@ -1074,7 +1126,7 @@ inherit - The element inherits the float value of its parent
 - Y establecemos float: right; en myImage2  
     - Esto empuja la imagen a la derecha y el texto a la izquierda.
 
-**Clearing Floats**
+#### **Clearing Floats**
 - Used to control behavior of floating elements  
 - Clear is used to stop wrap of an element around a floating element 
 - Floats are headache when they are not cleared properly  
@@ -1141,7 +1193,7 @@ parent
 </div>
 ```
 
-**Methods to clear float:**
+#### **Methods to clear float:**
 - claro  
     - toma 3 valores. izquierda, derecha o ambos  
     - utilizado para el problema 1
@@ -1157,8 +1209,19 @@ parent
 [⬆](#module-3---display-and-position-your-elements)  **[↩️](#contenido)**  
 
 ## Module 4 - Semantic HTML5
+- [Semantic `HTML`?](#semantic-html)
+  - [More about Semantic `HTML`](#more-about-semantic-html)
+- [Difference between HTML and HTML5?](#difference-between-html-and-html5)
+  - [HTML](#html)
+  - [HTML 5](#html-5)
+  - [Below are new semantic elements](#below-are-new-semantic-elements)
+- [What elements have disappeared in the latest HTML?](#what-elements-have-disappeared-in-the-latest-html)   
+- [Difference between `<div>' and '<frame>`?](#diference-between-div-and-frame)
+- [What is HTML5 Web Storage?](#what-is-html5-web-storage)
+  - [localStorage:](#localstorage)
+  - [sessionStorage:](#sessionstorage)
 
-### Semantic HTML?</ins>
+### Semantic HTML?
 
 - Es un estilo de codificación  
 - Elementos semánticos == elementos con significado Bueno para SEO  
@@ -1172,7 +1235,7 @@ parent
 - Todos estos elementos están construidos con un propósito específico - también son buenos para SEO.
 
 
-**More about Semantic HTML**
+#### **More about Semantic HTML**
 
 - `<b> </b>` para negrita, y `<i> </i>` para cursiva no debe utilizarse  
         - Son sólo formato  
@@ -1182,13 +1245,13 @@ parent
 - Elementos no semánticos: `<div>` and `<span>` - No dice nada sobre su contenido   
 - Elementos semánticos: `<form>`, `<table>`, and `<article>` - Define claramente su contenido
 
-### Diference between HTML and HTML5?</ins>
+### Difference between HTML and HTML5?
 
-**HTML**
+#### **HTML**
 
 - Lenguaje sencillo para maquetar texto e imágenes en una página web
 
-**HTML 5**
+#### **HTML 5**
 
 - Más como una plataforma de desarrollo de aplicaciones  
 - Un nuevo estándar para HTML  
@@ -1198,7 +1261,7 @@ parent
 - Ya no se necesitan tecnologías de plug-in propietarias como Adobe Flash o Microsoft Silverlight.  
         - Porque los navegadores pueden procesar estos elementos sin ningún soporte externo
 
-**Below are new semantic elements**
+#### **Below are new semantic elements**
 ```html
 - <article>, <aside>, <command>, <details>, <figure>, <figcaption>, <summary>
 - <header>, <footer>, <hgroup>, <nav>, <progress>, <section>, <time>
@@ -1206,13 +1269,13 @@ parent
 - <canvas>
 ```
 
-**What elements have disappeared in the latest HTML?**
+#### **What elements have disappeared in the latest HTML?**
 ```html
 - <frame> and <frameset>
 - <noframe>, <applet>, <bigcenter> and <basefront>
 ```
 
-### Diference between `<div>` and `<frame>`?</ins>
+### Diference between `<div>` and `<frame>`?
 
 - `div` es un contenedor genérico para agrupar y estilizar   
 - `frame` en realidad divide la página  
@@ -1221,7 +1284,7 @@ parent
         - exible  
         - incrusta elementos de terceros, como vídeos de YouTube
 
-### What is HTML5 Web Storage?</ins>
+### What is HTML5 Web Storage?
 
 - Con HTML5, los navegadores pueden almacenar datos localmente  
 - Es más seguro y rápido que las cookies  
@@ -1231,7 +1294,7 @@ parent
         - `window.localStorage` - almacena datos sin fecha de caducidad  
         - `window.sessionStorage` - almacena datos para una sesión (los datos se pierden cuando se cierra la pestaña)
 
-**localStorage:**
+#### **localStorage:**
 
 - Almacena los datos sin fecha de caducidad   
 - Los datos NO se borran al cerrar el navegador   
@@ -1248,7 +1311,7 @@ document.getElementById("result").innerHTML =
 localStorage.getItem("lastname");
 ```
 
-**sessionStorage:**
+#### **sessionStorage:**
 
 - Almacena los datos para una sola sesión   
 - Los datos se borran al cerrar el navegador
@@ -1268,13 +1331,32 @@ sessionStorage.clickcount + " time(s) in this session.";
 [⬆](#module-4---semantic-html5)  **[↩️](#contenido)**  
 
 ## Module 5 - Flexbox intro and media query media query
+- [Flexbox](#flexbox)
+  - [Flex box container properties](#flex-box-container-properties) 
+  - [Flex box item properties](#flex-box-item-properties) 
+  - [Flexbox Examples](#flexbox-examples)
+- [Media queries](#media-queries)
+  - [Always Design for Mobile First](#always-design-for-mobile-first) 
+  - [Orientation: Portrait / Landscape](#orientation-portrait--landscape)
+- [Let's talk about the sizes - `px` vs `em` vs `rem`](#lets-talk-about-the-sizes---px-vs-em-vs-rem) 
+  - [How to calculate PX from REM](#how-to-calculate-px-from-rem)
+- [More on rem vs em](#more-on-rem-vs-em) 
+- [CSS Grids](#css-grids)
+  - [Flexbox](#flexbox)
+  - [Grids](#grids)
+  - [Example](#example)
+  - [Example #2 - Gaps](#example-2---gaps)
+  - [Example #3 - Fractions](#example-3---fractions) 
+  - [Example #4 - Fractions Contd.](#example-4---fractions-contd) 
+  - [Nested grids](#nested-grids)
+  - [Start-End points of Grid](#start-end-points-of-grid)  
 
-### Flexbox</ins>
+### Flexbox
 
 - Proporciona una forma eficiente de disponer, alinear y distribuir el espacio entre los elementos de un contenedor.  
 - La idea principal: dar al contenedor la posibilidad de modificar la anchura/altura (y el orden) de sus elementos para aprovechar al máximo el espacio disponible.
 
-**Flex box container properties**
+#### **Flex box container properties**
 
 - `display: flex`
     - define un contenedor flex
@@ -1297,7 +1379,7 @@ sessionStorage.clickcount + " time(s) in this session.";
 - children properties
 
 
-**Flex box item properties**
+#### **Flex box item properties**
 
 - `order: <integer>; /* default is 0 */`
     - orden de aparición de los elementos flex en el contenedor flex
@@ -1323,7 +1405,7 @@ sessionStorage.clickcount + " time(s) in this session.";
     - permite modificar la alineación por defecto de cada elemento.  
     - anula la propiedad `align-items` del contenedor
 
-**Flexbox Examples**
+#### **Flexbox Examples**
 
 - Este es el código que utilizaremos para demostrar cómo funciona flex box
 
@@ -1470,7 +1552,7 @@ sessionStorage.clickcount + " time(s) in this session.";
 ![](src/8thOutput.png)
 
 
-### Media queries</ins>
+### Media queries
 
 - Se introdujo en `CSS3`.  
 - Utiliza la regla `@media` para incluir CSS sólo si se cumple una determinada condición.
@@ -1522,7 +1604,7 @@ change to lightblue:
 }
 ```
 
-**Always Design for Mobile First**
+#### **Always Design for Mobile First**
 
 - Esto significa que el estilo para móviles primero  
 - A continuación, incluir estilos de escritorio en las consultas de los medios de comunicación
@@ -1542,7 +1624,7 @@ change to lightblue:
 }
 ```
 
-**Orientation: Portrait / Landscape**
+#### **Orientation: Portrait / Landscape**
 
 - Se trata de consultas que se aplican en función de la orientación del navegador/dispositivo
 
@@ -1554,7 +1636,7 @@ change to lightblue:
 }
 ```
 
-### Let's talk about the sizes - `px` vs `em` vs `rem`</ins>
+### Let's talk about the sizes - `px` vs `em` vs `rem`
 
 - Los `pixels` son ignorantes, evítalos
 - Si estás configurando todos tus tamaños de fuente, tamaños de elementos y espaciado en píxeles, no estás tratando al usuario final con respeto.
@@ -1568,28 +1650,28 @@ change to lightblue:
     
 
 
-**How to calculate PX from REM**    
+#### **How to calculate PX from REM**    
 
 EJEMPLO: El tamaño de la fuente HTML es de 10px, el tamaño de la fuente del párrafo es de 1,6rem.    
 
 Entonces el tamaño en píxeles es `1.6rem * 10px = 16px`.
 
-### More on `rem` vs `em`</ins>
+### More on `rem` vs `em`
 - Tanto `rem` como `em` son unidades relativas  
 - `rem` sólo es relativo al tamaño de fuente HTML (raíz).  
 - `rem` se utiliza habitualmente para los márgenes, los rellenos y, a veces, también para el tamaño de la fuente.
 - `em` es relativo al tamaño de fuente de su padre directo o más cercano.   
 - se recomienda el uso de `em` para consultas de medios
 
-### CSS Grids</ins>
+### CSS Grids
 
-**Flexbox**
+#### **Flexbox**
 
 - Flexbox es de 1 dimensión  
 - Son columnas O filas  
 - No son posibles diseños bidimensionales completos
 
-**Grids**
+#### **Grids**
 
 - Es un sistema de maquetación basado en cuadrículas  
 - Las rejillas CSS son bidimensionales  
@@ -1597,7 +1679,7 @@ Entonces el tamaño en píxeles es `1.6rem * 10px = 16px`.
 
 > SUGERENCIA: Puede utilizar Grid y Flexbox juntos.
 
-**Example**
+#### **Example**
 
 - Veamos el siguiente ejemplo   
 - Crea un `wrapper` DIV 
@@ -1628,7 +1710,7 @@ Entonces el tamaño en píxeles es `1.6rem * 10px = 16px`.
     grid-template-columns: 70% 30%;
 }
 ```
-**Example #2 - Gaps**
+#### **Example #2 - Gaps**
 
 - Aquí creamos 3 columnas  
     - 40% 30% 30% respectivamente  
@@ -1645,7 +1727,7 @@ Entonces el tamaño en píxeles es `1.6rem * 10px = 16px`.
     grid-gap; 1em; // row and column both!!!
 }
 ```
-**Example #3 - Fractions**
+#### **Example #3 - Fractions**
 
 - No tiene que perder tiempo calculando porcentajes   
 - Puedes usar simplemente "fracciones"  
@@ -1664,7 +1746,7 @@ grid-template-columns: 1fr 1fr 1fr;
 grid-template-columns: 1fr 2fr 1fr;
 ```
 
-**Example #4 - Fractions Contd.**
+#### **Example #4 - Fractions Contd.**
 
 - Puede utilizar la función repeat() en lugar de repetir manualmente los tamaños de las columnas   
 - La siguiente propiedad creará 4 columnas  
@@ -1692,7 +1774,7 @@ grid-template-columns: repeat(4, 1fr);
 auto based on content
 }
 ```
-**Nested grids**
+#### **Nested grids**
 
 - También puede definir rejillas anidadas
 
@@ -1716,12 +1798,11 @@ auto based on content
   grid-template-columns: repeat(3, 1fr); // 3 columns of 1 fr
   grid-auto-rows: 100px;
 
-}
-
-Start-End points of Grid
+  }
 
 }
 ```
+#### **Start-End points of Grid**
 
 - También podemos especificar los puntos inicial y final de las columnas y filas de la cuadrícula 
 - Si utiliza esta opción, es posible que no desee especificar los tamaños  
@@ -1770,13 +1851,22 @@ Start-End points of Grid
 [⬆](#module-5---flexbox-intro-and-media-query-media-query)  **[↩️](#contenido)**  
 
 ## Module 6 - Quirks, tips, and tricks
-
-### FOUC</ins>  
+- [FOUC](#fouc)
+  - [How to avoid it?](#¿cómo-evitarlo)
+- [BEM naming convention](#bem-naming-convention)
+- [OOCSS - Object Oriented CSS](#oocss---object-oriented-css)
+- [CSS User Agent Styles](#css-user-agent-styles) 
+- [Normalizing CSS](#normalizing-css)
+- [Reset CSS](#reset-css)
+- [Validate your CSS](#validate-your-css)
+- [Testing Strategies](#testing-strategies)
+- [Conditional CSS](#conditional-css)
+### FOUC 
 - Flash de contenido sin estilo
 - Ocurre cuando durante un breve momento -> el contenido se muestra con los estilos por defecto del navegador   
 - Ocurre cuando no se carga el CSS pero sí el contenido  
 
-**¿Cómo evitarlo?**    
+#### **¿Cómo evitarlo?**    
 
 1.
 - Puedes usar CSS para ocultar BODY
@@ -1812,7 +1902,7 @@ $('html').removeClass('hidden');
     </body>
 </html>
 ```
-### BEM naming convention</ins>  
+### BEM naming convention
 ![bemNaming](src/bemNaming.png)  
 
 - Blocks, Elements, Modifiers -> BEM
@@ -1846,7 +1936,7 @@ $('html').removeClass('hidden');
   <li class="nav__item nav__item—-active">About</li> // active modifier applied
 </ul>
 ```
-### OOCSS - Object Oriented CSS</ins>  
+### OOCSS - Object Oriented CSS  
 
 - Estándar para estructurar su CSS de forma modular   
 - Puede reutilizar CSS sin problemas
@@ -1891,7 +1981,7 @@ $('html').removeClass('hidden');
 </footer>
 ```
 
-### CSS User Agent Styles</ins>
+### CSS User Agent Styles
 
 - Estos son los estilos del navegador
 - Cuando el navegador renderiza una página aplica estilos básicos antes de que hayas escrito un solo estilo   
@@ -1902,7 +1992,7 @@ $('html').removeClass('hidden');
     - Normalizar CSS como solución suave
     - Restablecer CSS como solución más agresiva
 
-### Normalizing CSS</ins>  
+### Normalizing CSS 
 
 - Small CSS file that provides cross-browser consistency
 - Provides default styles for HTML elements
@@ -1910,7 +2000,7 @@ $('html').removeClass('hidden');
 - In some cases this approach applies IE or EDGE styles to the rest of the browsers  
 
 
-### Reset CSS</ins>  
+### Reset CSS  
 
 - This approach says that we don’t need the browsers’ default styles at all   
 - We’ll define in the project according to our needs
@@ -1921,7 +2011,7 @@ $('html').removeClass('hidden');
 - Unlike an ordinary CSS reset, target specific HTML tags’ styles rather than making a big list of tags.
     - Make it less aggressive and a lot more readable  
 
-### Validate your CSS</ins>
+### Validate your CSS
 
 - Use online tools to validate your CSS
 - Validation Service can be used to check the correctness (validity)
@@ -1931,7 +2021,7 @@ $('html').removeClass('hidden');
     - It merely ensures that your code is without HTML or CSS errors. 
 - Tool - The Validation Service
 
-### Testing Strategies</ins>
+### Testing Strategies
 
 - Do cross-browser testing
 - Manually test Chrome, Firefox
@@ -1940,7 +2030,7 @@ $('html').removeClass('hidden');
      - browsershots.org
      - IEtest  
 
-### Conditional CSS</ins>  
+### Conditional CSS  
 
 - Use below conditional CSS for IE hacks
 
