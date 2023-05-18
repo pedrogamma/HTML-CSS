@@ -637,5 +637,494 @@ h1 {
     border-radius: 5px 20px 5px;
 }
 ```
+  
+## Module 3 - Display and Module 3 - Display and position your elements
+
+### <ins>Box model</ins>
+![boxModel](src/boxModel.png)
+- Imagina una caja que envuelve cada elemento HTML  
+    - Esto se refiere al modelo de caja  
+- Tiene márgenes, bordes, rellenos y el contenido real.  
+- Todo en una página web es una caja en la que se puede controlar el tamaño, la posición, el fondo, etc.
+```css
+div {
+    width: 320px;
+	padding: 10px;
+	border: 5px solid gray;
+	margin: 0; 
+}
+```
+
+```
+320px (width)
+
+- 20px (left + right padding)
+- 10px (left + right border)
+- 0px (left + right margin)
+
+= 350px
+```
+
+**La anchura total de un elemento debe calcularse así:**
+
+```
+Total element width = width + left padding + right padding + left border +
+right border + left margin + right margin
+```
+
+**La altura total de un elemento debe calcularse así:**
+```
+Total element height = height + top padding + bottom padding + top border
++ bottom border + top margin + bottom margin
+```
+
+### <ins>Margins</ins>
+- Los márgenes se utilizan para crear espacio alrededor de los elementos, fuera de su borde.
+
+```html
+<div>
+  <p class="myParagraph">My Paragraph</p>
+</div>
+```
+
+```css
+/* styles */
+.myParagraph {
+  margin: 20px;
+}
+```
+
+- `margin: 20px;` gives the `p` element margin of `20px` around it from all the sides
+
+**Margin On Individual Sides**
+- También puede dar margen a los elementos de cualquier lado si lo desea.
+```css
+margin-top
+margin-right
+margin-bottom
+margin-left
+```
+
+**Margin Shorthands**
+- Este atajo se puede utilizar para dar margen en todos los lados
+
+```css
+p{  
+margin: 20px;
+}
+```
+
+- El ejemplo de abajo dar margen 20px superior 
+- Y dar margen 40px izquierda y derecha  
+
+```css
+p{  
+margin: 20px 40px;
+}
+```
+
+- El ejemplo de abajo da margen `20px` superior
+- Y dar margen `40px` izquierda y derecha
+- Y dar margen `50px` abajo
+
+```css
+p{  
+margin: 20px 40px 50px;
+}
+```
+
+**Auto Margin**
+- El valor `auto` de margin establece el elemento horizontalmente centrado dentro de su contenedor  
+- Abajo `div` ocupará 200px de ancho y el espacio restante se dividirá equitativamente entre el margen izquierdo y derecho
+```css
+div {
+  width: 200px
+  margin: auto;
+}
+```
+
+### <ins>Paddings</ins>
+- Los márgenes se utilizan para generar espacio alrededor del contenido del elemento en cuestión, dentro de su borde.
+
+```html
+<div class="myDiv">
+  <p>My Paragraph</p>
+</div>
+```
+
+```css
+/* styles */
+.myDiv {
+  padding: 20px;
+}
+```
+
+- `padding: 20px;` da al elemento `div` un relleno de `20px`.  
+- Así que, básicamente, habrá un espacio de `20px` entre `p` y `div` en todos los lados.
+
+**Padding On Individual Sides**
+- También puede dar relleno a los elementos en cualquier lado en particular si lo desea
+```css
+padding-top
+padding-right
+padding-bottom
+padding-left
+```
+
+**Padding Shorthands**
+- Para acolchar todos los lados
+```css
+div {
+  padding: 20px;
+}
+```
+
+- El siguiente ejemplo da padding `20px` arriba y abajo 
+- Y dar padding `40px` izquierda y derecha
+- 
+```css
+div {
+  padding: 20px 40px;
+}
+```
+
+- El siguiente ejemplo da padding `20px` top 
+- Y dar padding `40px` izquierda y derecha  
+- Y dar padding `50px` abajo
+```css
+div {
+  padding: 20px 40px 50px;
+}
+```
+
+### <ins>Display</ins>
+
+**Block**
+- Esta propiedad estira el elemento de izquierda a derecha todo lo que puede  
+- Por defecto es block para `div`, `p`, `form`, `header`, `footer`, `section` (y algunos más) 
+- Estos elementos no pueden colocarse en la misma línea horizontal con ningún otro modo de visualización.  
+    - Excepto cuando están floated  
+- Como se muestra en la ilustración -> cada elemento se estira y ocupa toda la fila
+
+**Inline**
+- El elemento Inline se sitúa en línea  
+		- Sin interrumpir el flujo de otros elementos
+- Como se muestra en la ilustración -> cada elemento ocupa sólo el espacio que necesita  
+    - El elemento pasa a la siguiente fila si no hay espacio suficiente
+- `span`, `em`, `b` son ejemplos de elementos en línea 
+- Sólo ocupan el ancho necesario  
+- No respetan el relleno vertical  
+    - Sin anchura  
+    - Sin altura  
+    - Simplemente los ignoran
+- Se respetan el margen horizontal y el relleno 
+- Ignoran el margen vertical y el relleno vertical
+
+**Inline-block**
+- Es igual que los elementos inline  
+- PERO respetan la anchura y la altura  
+- Básicamente, combinan las propiedades de los elementos de bloque y de los elementos en línea.  
+- El elemento puede aparecer en la misma línea horizontal que otros elementos.  
+- Así que, como muestra la ilustración, si ajustas la anchura puedes poner todos los elementos juntos en una sola fila.
+
+**None**
+- Estos elementos no aparecerán en la página en absoluto Pero todavía se puede interactuar con ella a través de DOM  
+- NO hay espacio asignado en la página
+
+**Visibility Hidden**
+- Se le asigna espacio en la página 
+- La etiqueta se muestra en el DOM  
+- El elemento no es visible
+```css
+div {
+  visibility: hidden;
+}
+```
+
+**Flex**
+- La propiedad Flex permite modificar la anchura y la altura de los elementos para adaptarlos al espacio disponible.
+- Se utiliza para adaptarse a todo tipo de dispositivos de visualización y tamaños de pantalla.  
+- Rellena el espacio disponible  
+    - O se encoge para evitar el exceso
+
+### <ins>Positions</ins>
+**Static**
+- Es el valor por defecto para cada elemento 
+- Honestamente, no significa mucho.  
+    - Sólo significa que se insertará en la página como lo haría normalmente.
+- Como se muestra en las ilustraciones los bloques simplemente caen en su posición por defecto  
+- Úsalo cuando quieras quitar la posición aplicada forzosamente al elemento 
+- NOTA: `z-index` no funciona con ellos
+
+**Relative**
+- El elemento es relativo a sí mismo 
+- Echa un vistazo al siguiente ejemplo
+```html
+<div class=myDiv""></div>
+```
+
+```css
+.myDiv{
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+```
+
+- Ahora, se deslizará hacia abajo y a la izquierda por `10px` de donde normalmente sería   
+    - Consulte la ilustración anterior
+- Sin esa propiedad "top" - sólo habría seguido `position: static`.
+
+**Absolute**
+- Esta propiedad es muy potente  
+- Le permite colocar el elemento exactamente donde desee 
+- Usando top, left, bottom. y right para establecer la ubicación 
+- **RECUERDE:** estos valores son relativos a su padre.  
+  - Donde el padre es absoluto o relativo    
+  - Si no hay tal padre, entonces se comprobará de nuevo a la etiqueta HTML y colocarlo absoluto a la propia página web
+- Por lo tanto, los elementos se eliminan del "flujo" de la página web  
+- No se ven afectados por otros elementos  
+- Y no afecta a otros elementos  
+- **NOTA:** Su uso excesivo o inadecuado puede limitar la flexibilidad de su sitio web.
+
+```html
+<div class=myDiv""></div>
+```
+
+<div class=myDiv""></div>
+
+```css
+.myDiv{
+    position: absolute;
+	top: 10px;
+	left: 10px;
+	}
+```
+
+- El `div` de arriba se deslizará hacia abajo y a la izquierda en `10px` desde su padre    
+  - Asumiendo que el padre tiene una posición absoluta o relativa
+
+**Fixed**
+- Posición relativa a la ventana gráfica  
+- Útil en encabezados o pies de página xed  
+- Por favor, consulte la ilustración de arriba para una mejor visualización
+```html
+<div class=myDiv""></div>
+```
+
+```css
+.myDiv{
+    position: fixed;
+}
+```
+
+### <ins>Centering:</ins>
+- Centrar la línea de texto utilizando la propiedad `text-align`.
+```html
+<div class="card">
+  <h2 class="">long paragraph</h2>
+  <p class="">headline</p>
+</div>
+```
+
+```
+P { text-align: center }
+H2 { text-align: center }
+```
+
+- Centrar un bloque de párrafo o una imagen usando la propiedad `margin` 
+- Esto centrará horizontalmente los elementos
+
+```html
+<div class="card">
+  <p class="blocktext">
+    headline
+  </p>
+  <img src="https://via.placeholder.com/150" />
+</div>
+```
+
+```css
+P.blocktext {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50px;
+}
+
+IMG {
+    display: block;
+    margin-left: auto;
+	margin-right: auto;
+}
+
+.card {
+  border: 10px solid green;
+  height: 200px;
+  width: 200px;
+  padding: 20px;
+}
+```
+
+
+**Centering Vertically**
+- Podemos usar la propiedad `transform` junto con `top` del elemento para centrarlo verticalmente dentro de su padre.  
+- Por favor, no el contenedor padre tiene que ser posicionado `relative` o `absolute` para centrar el hijo
+```html
+<div class="container">
+  <p>This paragraph...</p>
+</div>
+```
+
+```css
+div.container {
+  height: 10em;
+  position: relative;
+  border: 2px solid blue;
+}
+
+div.container p {
+  margin: 0;
+  position: absolute;
+
+  /*50% here means 50% of the height of the container
+  top: 50%;*/
+
+  /* move the element up by half its own height. '50%' in 'translate(0,
+-50%)' refers to the height of the element itself */
+
+  transform: translate(
+    0,
+	-50%
+  );
+}
+```
+
+
+- `top: 50%;` - aquí 50% significa el 50% de la altura del contenedor
+- `transform: translate(0, -50%);`  
+  - esto moverá el elemento hacia arriba la mitad de su propia altura.  
+  - `50%` en `translate(0, -50%)` se refiere a la altura del propio elemento
+
+
+### <ins>CSS Float</ins>
+- El elemento puede desplazarse hacia la izquierda o la derecha  
+- Otros elementos pueden envolverlo  
+- Se utiliza para posicionar y dar formato al contenido 
+- Se utiliza con imágenes y texto que se envuelve a su alrededor
+```shell
+left - The element floats to the left of its container
+right - The element floats to the right of its container
+none - The element appears in its default position
+inherit - The element inherits the float value of its parent
+```
+```html
+<p>
+  my long text here...
+  <img class="myImage1" src="myImage1.jpg" alt="myImage1">
+
+</p> <p>
+
+  my long text here...
+
+  <img class="myImage2" src="myImage2.jpg" alt="myImage2">
+</p>
+```
+
+```css
+.myImage1 {
+  float: left;
+}
+
+.myImage2 {
+  float: right;
+}
+```
+
+- Por favor, consulte el código anterior y la ilustración para obtener una mejor visualización  
+- Hemos dened dos etiquetas p y una etiqueta img dentro de cada párrafo elementos 
+- A continuación, establecemos float: left; en myImage1  
+    - Esto empuja la imagen a la izquierda y el texto a la derecha 
+- Y establecemos float: right; en myImage2  
+    - Esto empuja la imagen a la derecha y el texto a la izquierda.
+
+**Clearing Floats**
+- Used to control behavior of floating elements  
+- Clear is used to stop wrap of an element around a floating element 
+- Floats are headache when they are not cleared properly  
+- Problem1:  
+    - There are 2 sections side by side  
+    - You float LHS section..  
+    - The LHS section height is not does not match the RHS section
+		
+```
+============
+| LHS | RHS|
+|     |=====
+|     |
+=======
+```
+
+- Problem2:  
+		- el padre se hunde cuando los hijos flotan
+```
+===========
+parent
+===========
+
+============
+| LHS | RHS|
+|     |    |
+============
+```
+
+```html
+<div class="parent">
+    <div class="lhs" >
+        // float left
+    </div>
+    <div class="rhs">
+        // float left
+    </div>
+</div>
+```
+
+```
+// Fix:
+
+==================
+parent
+
+============
+| LHS | RHS|
+|     |    |
+============
+
+===================
+```
+
+```html
+<div class="parent">
+    <div class="lhs" >
+        // float left
+    </div>
+    <div class="rhs">
+        // float left
+</div>
+    <div style="clear:both"></div>
+</div>
+```
+
+**Methods to clear float:**
+- claro  
+    - toma 3 valores. izquierda, derecha o ambos  
+    - utilizado para el problema 1
+- overflow:oculto  
+    - ideal para asegurar que parent no se colapse  
+    - esta prop se establece en parent  
+    - usado para el problema 2
+- clearfix  
+  - es un hack... usa pseudo elementos... y limpia ambas propiedades juntas  
+  - prop fijado al padre  
+  - usado para el problema 2
 
 
